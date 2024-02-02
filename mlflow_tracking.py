@@ -20,7 +20,7 @@ with mlflow.start_run():
     mlflow.log_metric("accuracy", accuracy)
 
     # Set a tag that we can use to remind ourselves what this run was for
-    mlflow.set_tag("Training Info", "Basic LR model for iris data")
+    mlflow.set_tag("Training Info", "First linear regression")
 
     # Infer the model signature
     signature = infer_signature(irreg.X_train, lr.predict(irreg.X_train))

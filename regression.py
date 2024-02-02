@@ -1,7 +1,8 @@
 import pandas as pd
 from sklearn import datasets
-from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.cluster import KMeans
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
 
@@ -22,6 +23,7 @@ class IrisRegression:
 
 
     def train_model(self):
+        ("k_means_iris_3", KMeans(n_clusters=3, n_init="auto")),
         lr = LogisticRegression(**self.params)
         lr.fit(self.X_train, self.y_train)
         y_pred = lr.predict(self.X_test)

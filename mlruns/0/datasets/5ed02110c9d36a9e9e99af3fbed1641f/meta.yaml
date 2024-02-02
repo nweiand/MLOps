@@ -1,0 +1,8 @@
+digest: 77a19fc0
+name: dataset
+profile: '{"num_rows": 1599, "num_elements": 1599}'
+schema: '{"mlflow_colspec": [{"type": "string", "name": "fixed acidity;\"volatile
+  acidity\";\"citric acid\";\"residual sugar\";\"chlorides\";\"free sulfur dioxide\";\"total
+  sulfur dioxide\";\"density\";\"pH\";\"sulphates\";\"alcohol\";\"quality\""}]}'
+source: '{"url": "http://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv"}'
+source_type: http

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/73d69de74ab342ef8837da95ea76c5a8/artifacts
+end_time: 1701096477861
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 73d69de74ab342ef8837da95ea76c5a8
+run_name: colorful-crab-399
+run_uuid: 73d69de74ab342ef8837da95ea76c5a8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701096477823
+status: 3
+tags: []
+user_id: nweiand
