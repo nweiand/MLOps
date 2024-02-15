@@ -11,7 +11,7 @@ The components of the paper https://arxiv.org/abs/2205.02302 are implemented in 
 ### CI/CD Component
 
 The CI/CD Component in this case is GitHub Actions. It uses a .yaml file to automate 
-workflows on specific triggers, like when a new commit is pushed to the repository. GitHub creates a comlplete
+workflows on specific triggers, like when a new commit is pushed to the repository. GitHub creates a complete
 environment which is configurable in the .yaml file.
 
 ### Code Repository
@@ -19,6 +19,9 @@ environment which is configurable in the .yaml file.
 I used GitHub as an  example for a source code repository
 
 ### Workflow Orchestration Component
+
+Using Apache Airflow as a Workflow  Orchestration Component allows for automating tasks, such as model training. We have created
+a DAG (directed acyclical graph) fot this. It loads the data, creates a train-test-split and then
 
 ### Feature Store System
 
@@ -41,9 +44,7 @@ metadata of the  training itself, e.g. date and duration.
 
 ### Model Serving Component
 
-To serve the model we choose one of the trained models and serve it via Apache Airflow DAGs.
-
-(via ```mlflow models serve --model-uri runs:/caf16f1fe3c949ae9ba534367fd14c17/model ```)
+To serve the model we choose one of the trained models and serve it via ```mlflow models serve --model-uri runs:/caf16f1fe3c949ae9ba534367fd14c17/model ```
 
 After serving the model, we can access it via REST Api.
 
