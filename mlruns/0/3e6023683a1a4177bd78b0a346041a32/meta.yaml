@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/3e6023683a1a4177bd78b0a346041a32/artifacts
+end_time: 1701096467359
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3e6023683a1a4177bd78b0a346041a32
+run_name: gentle-tern-658
+run_uuid: 3e6023683a1a4177bd78b0a346041a32
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701096467327
+status: 3
+tags: []
+user_id: nweiand
