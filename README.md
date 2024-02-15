@@ -21,7 +21,8 @@ I used GitHub as an  example for a source code repository
 ### Workflow Orchestration Component
 
 Using Apache Airflow as a Workflow  Orchestration Component allows for automating tasks, such as model training. We have created
-a DAG (directed acyclical graph) fot this. It loads the data, creates a train-test-split and then
+a DAG (directed acyclical graph) fot this. It loads the data, creates a train-test-split and then trains the model. 
+Apache Airflow has to be started via two CLI commands, ```apache webserver --port 8080``` and ```apache scheduler respectively```
 
 ### Feature Store System
 
@@ -35,7 +36,7 @@ Kubernetes for example is not needed, as there is no need for distributed comput
 
 ### Model Registry
 
-We use MLflow as our Model Registry. For all our test-runs we used MLflow to track the models and their parameters.
+We use MLflow as our Model Registry. For all our test-runs we used MLflow to track the models and their parameters. MLflow is started with ```mlflow server --host 127.0.0.1 --port 8000```
 
 ### Model Metadata Store
 
