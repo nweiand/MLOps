@@ -1,0 +1,11 @@
+digest: 60f42a4a
+name: dataset
+profile: '{"num_rows": 150, "num_elements": 750}'
+schema: '{"mlflow_colspec": [{"type": "double", "name": "sepal length (cm)"}, {"type":
+  "double", "name": "sepal width (cm)"}, {"type": "double", "name": "petal length
+  (cm)"}, {"type": "double", "name": "petal width (cm)"}, {"type": "double", "name":
+  "target"}]}'
+source: '{"tags": {"mlflow.user": "nweiand", "mlflow.source.name": "D:\\Documents\\AAA_Hochschule\\Wise
+  2023_24\\Seminar\\MLOps\\log_dataset.py", "mlflow.source.type": "LOCAL", "mlflow.source.git.commit":
+  "6d32fad63a686908c3833d90acb389f1c60f6f6c"}}'
+source_type: code

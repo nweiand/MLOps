@@ -2,34 +2,46 @@ import mlflow
 from mlflow.models import infer_signature
 from regression import IrisRegression
 
+class Tracking:
 
-irreg = IrisRegression()
-params, accuracy, lr = irreg.train_model()
+    def __init__(self, model, name ):
+        self.model = model
+        self.name = name
+# Erstellen der IrisRegressionsklasse
 
-mlflow.set_tracking_uri(uri="http://127.0.0.1:8080")
+    def track_run(self, loss_metric_name:str, tag1:str, tag2:str):
+        model_for_run = self.model
+        params, loss_metric, lr = model_for_run.train_model()
 
-# Create a new MLflow Experiment
-mlflow.set_experiment("MLflow IrisRegression")
+        # Wo ist mlflow zu finden?
+        mlflow.set_tracking_uri(uri="http://127.0.0.1:8000")
 
-# Start an MLflow run
-with mlflow.start_run():
-    # Log the hyperparameters
-    mlflow.log_params(params)
+        # Erstellen eines neuen MLFlow Experimentes
+        mlflow.set_experiment(self.name)
 
-    # Log the loss metric
-    mlflow.log_metric("accuracy", accuracy)
+        # Erstellen eines neuen MLFlow Laufes
+        with mlflow.start_run():
+            # hyperparameter
+            mlflow.log_params(params)
 
-    # Set a tag that we can use to remind ourselves what this run was for
-    mlflow.set_tag("Training Info", "First linear regression")
+            # loss metric
+            mlflow.log_metric(loss_metric_name, loss_metric)
 
-    # Infer the model signature
-    signature = infer_signature(irreg.X_train, lr.predict(irreg.X_train))
+            # Tag, mit dem das Experiment beschrieben werden kann
+            mlflow.set_tag(tag1, tag2)
 
-    # Log the model
-    model_info = mlflow.sklearn.log_model(
-        sk_model=lr,
-        artifact_path="iris_model",
-        signature=signature,
-        input_example=irreg.X_train,
-        registered_model_name="tracking-quickstart",
-    )
+            # Signatur des Experiments
+            signature = infer_signature(model_for_run.X_train, lr.predict(model_for_run.X_train))
+
+            # Loggen des Modells
+            model_info = mlflow.sklearn.log_model(
+                sk_model=lr,
+                artifact_path="iris_model",
+                signature=signature,
+                input_example=model_for_run.X_train,
+                registered_model_name="tracking-quickstart",
+            )
+
+if __name__ == "__main__":
+    track = Tracking(IrisRegression(random_state=9876), name = "MLflow IrisRegression")
+    track.track_run(loss_metric_name="accuracy", tag1="Training Info", tag2="Training Run 2")
