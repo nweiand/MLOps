@@ -22,7 +22,7 @@ I used GitHub as an  example for a source code repository
 
 Using Apache Airflow as a Workflow  Orchestration Component allows for automating tasks, such as model training. We have created
 a DAG (directed acyclical graph) fot this. It loads the data, creates a train-test-split and then trains the model. 
-Apache Airflow has to be started via two CLI commands, ```apache webserver --port 8080``` and ```apache scheduler respectively```
+Apache Airflow has to be started via two CLI commands, ```apache webserver --port 8080``` and ```apache scheduler``` respectively.
 
 ### Feature Store System
 
